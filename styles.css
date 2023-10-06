@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* headers styles */
+
+h1 {
+  display: inline-block;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 64px 0;
+  align-items: center;
+}
+
+.navbar .hamburger {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.navbar .hamburger {
+  display: none;
+}
+
+.navbar .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .left .logo {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar .left .btn {
+  margin-left: 100px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  background-color: white;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  transition: all 0.2s;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.navbar .left .btn:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.navbar .right a {
+  text-decoration: none;
+  color: black;
+  margin: 16px;
+  transition: all 0.2s;
+}
+
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+
+.left .name {
+  color: #e55604;
+}
+
+/* mobile nav styles */
+
+.mobileNav {
+  width: 80px;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+  top: 150px;
+  right: -160px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
+
+.mobileNav a {
+  text-decoration: none;
+  color: black;
+  margin-top: 100px;
+  transition: all 2s ease-out;
+}
+
+.link-wrapper {
+  margin-bottom: auto;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobileNav a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.openDrawer {
+  transform: translateX(-160px);
+}
+
+/* cards */
+.card-wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  object-fit: cover;
+}
+
+/* creating the overlay */
+
+.card .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  color: white;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 5px;
+  transition: all 0.1s ease;
+}
+
+.card .overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card .details {
+  margin-top: 10px;
+}
+
+.details .place {
+  font-weight: bold;
+}
+
+.details .price {
+  margin-top: 10px;
+  color: #113946;
+  letter-spacing: 0.5px;
+}
+
+/* make the website responsive on different screen sizes */
+@media only screen and (max-width: 1300px) {
+  .card .overlay {
+    font-size: 2rem;
+  }
+}
+/* desktop size */
+@media only screen and (max-width: 1200px) {
+  .card-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container {
+    max-width: 95%;
+  }
+  .navbar .left .btn {
+    margin-left: 20px;
+  }
+}
+
+/* tablet size */
+@media only screen and (max-width: 900px) {
+  .card-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .navbar .right {
+    display: none;
+  }
+
+  .navbar .hamburger {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .navbar .hamburger {
+    display: none;
+  }
+}
+
+/* mobile size */
+@media only screen and (max-width: 600px) {
+  .card-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .card .overlay {
+    font-size: 2.5rem;
+  }
+
+  .navbar .left {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .left .btn {
+    margin-top: 20px;
+    font-size: 0.8rem;
+  }
+
+  .navbar {
+    padding: 20px 0;
+  }
+}
+
+/* styling the footer */
+
+footer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .show-more-btn {
+  font-size: 0.9rem;
+  margin: 40px 0;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+footer .show-more-btn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+footer p {
+  font-size: 1.2rem;
+}
+
+/* adding animations to the navbar */
+
+.animatebar1 {
+  animation: rotatebar1 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animatebar2 {
+  animation: fadebar2 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animatebar3 {
+  animation: rotatebar3 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotatebar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(3px, 10px);
+  }
+}
+
+@keyframes rotatebar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -9px);
+  }
+}
+
+@keyframes fadebar2 {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
